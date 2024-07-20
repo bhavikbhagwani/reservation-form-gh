@@ -59,6 +59,13 @@
 }
 
 
+.message {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.15em;
+    color: #1b1b1b;
+}
+
 
 .modal_btns {
     text-align: center;

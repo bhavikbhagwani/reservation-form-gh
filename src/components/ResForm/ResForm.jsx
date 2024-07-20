@@ -3,7 +3,7 @@ import styles from './ResForm.module.css'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
-const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
+const ResForm = ({values, valueSetters, onOpen, resetResevForm, showModal}) => {
 
     const {name, email, phone, numberOfPeople, date, time, place, comm, nameError, emailError, phoneNumberError, numPeopleError, dateError, timeError, placeError, finalError} = values
     const {setName, setEmail, setPhone, setNumberOfPeople, setDate, setTime, setPlace, setComments, setNameError, setEmailError, setphoneNumberError, setnumPeopleError, setDateError, setTimeError, setPlaceError, setFinalError} = valueSetters
@@ -190,7 +190,7 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
 
 
         sendEmailToMyself(event)
-        // sendEmailToUser(event)
+        sendEmailToUser(event)
 
       }else{
         setFinalError("Some values have not been entered. Please fill in the reservation form and try again ")
@@ -201,7 +201,7 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
   
 
   return (
-    <div className={styles.box}>
+    <div className={`${styles.box} ${showModal ? styles.disabledForm : ''}`}>
         <div className={styles.heading}>
           <h1>Reservation for: {name} </h1>
         </div>

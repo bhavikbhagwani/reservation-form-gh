@@ -48,6 +48,10 @@ const Modal = ({showModal, onClose, values, resetResevForm}) => {
 
             </div>
 
+            <div className={styles.message}>
+              <p>The reservation details have been sent to the email shown above.</p>
+            </div>
+
             
             
             <div className={styles.modal_btns}>

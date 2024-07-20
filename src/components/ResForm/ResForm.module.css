@@ -12,6 +12,11 @@
     overflow: auto;
 }
 
+.box.disabledForm {
+  pointer-events: none;
+  opacity: 0.5; /* Optional: to visually indicate the form is disabled */
+}
+
 .heading{
     display: flex;
     align-items: center;

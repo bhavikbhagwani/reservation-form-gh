@@ -53,7 +53,7 @@ function App() {
   return (
     <>
     <div className='full_container'>
-      <ResForm values={values} valueSetters = {valueSetters} onOpen = {onOpen} resetResevForm = {resetResevForm}></ResForm>
+      <ResForm values={values} valueSetters = {valueSetters} onOpen = {onOpen} resetResevForm = {resetResevForm} showModal = {showModal}></ResForm>
     </div>
     <Modal
     showModal={showModal} 
