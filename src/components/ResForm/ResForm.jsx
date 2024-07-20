@@ -141,6 +141,8 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
     };
   
     const updatePlace = (event) => {
+
+
       const placeValue = event
       setPlace(placeValue);
 
@@ -165,6 +167,8 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
 
     const sendEmailToMyself = (event) => {
         emailjs.sendForm('service_r9dmcyl', 'template_uy6yawe', event.target, 'Xu9C-u3lLfyexah2C')
+
+        
     }
 
     const sendEmailToUser = (event) => {
@@ -186,7 +190,7 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
 
 
         sendEmailToMyself(event)
-        sendEmailToUser(event)
+        // sendEmailToUser(event)
 
       }else{
         setFinalError("Some values have not been entered. Please fill in the reservation form and try again ")
@@ -238,21 +242,21 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
             <label className={styles.label}>Select place of sitting: </label>
             <div className={styles.radioButtonsContainer}>
               <div className={styles.radioButton}>
-                <input checked={place==="inside"} onChange={() => updatePlace("inside")} name='place_from' id='radio2' className={styles.radioButtonInput} type='radio' />
+                <input checked={place==="inside"} onChange={() => updatePlace("inside")}  id='radio2' className={styles.radioButtonInput} type='radio' value="inside" />
                 <label htmlFor="radio2" className={styles.radioButtonLabel}>
                   <span className={styles.radioButtonCustom}></span>
                   Inside
                 </label>
               </div>
               <div className={styles.radioButton}>
-                <input checked={place==="outside"} onChange={() => updatePlace("outside")} name='place_from' id='radio3' className={styles.radioButtonInput} type='radio' />
+                <input checked={place==="outside"} onChange={() => updatePlace("outside")}  id='radio3' className={styles.radioButtonInput} type='radio' value="outside" />
                 <label htmlFor="radio3" className={styles.radioButtonLabel}>
                   <span className={styles.radioButtonCustom}></span>
                   Outisde
                 </label>
               </div>
               <div className={styles.radioButton}>
-                <input checked={place==="any"} onChange={() => updatePlace("any")} name='place_from' id='radio1' className={styles.radioButtonInput} type='radio' />
+                <input checked={place==="any"} onChange={() => updatePlace("any")}  id='radio1' className={styles.radioButtonInput} type='radio' value="any" />
                 <label htmlFor="radio1" className={styles.radioButtonLabel}>
                   <span className={styles.radioButtonCustom}></span>
                   Any
@@ -261,6 +265,8 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm}) => {
             </div>
         
           </div>
+
+          <input type="hidden" name="place_from" value={place}/>
 
           <div className={styles.input_group}>
             <label className={styles.label}>Other Comments: </label>
