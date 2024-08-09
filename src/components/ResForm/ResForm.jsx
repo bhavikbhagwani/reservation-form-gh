@@ -211,8 +211,8 @@ const ResForm = ({values, valueSetters, onOpen, resetResevForm, showModal}) => {
         setFinalError("")
 
 
-        //sendEmailToMyself(event)
-        //sendEmailToUser(event)
+        sendEmailToMyself(event)
+        sendEmailToUser(event)
 
       }else{
         setFinalError("Some values have not been entered or have not been entered correctly. Please fill in the reservation form and try again ")
